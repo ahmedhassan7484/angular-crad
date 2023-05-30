@@ -1,0 +1,62 @@
+<p class="text-warning bg-dark fw-bolder fs-3 text-decoration-underline text-center">Login Page</p>
+
+<div class="container p-5 mt-4">
+  <form [formGroup]="userform">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Username"
+        formControlName="usernames"
+      />
+      
+    </div>
+    <ng-container *ngIf="getUserName.touched">
+      <div
+      *ngIf="getUserName.hasError('required')"
+      id="emailHelp"
+      class="form-text text-danger"
+    >
+      User Name is Required
+    </div>
+    <div
+      *ngIf="getUserName.hasError('max')"
+      id="emailHelp"
+      class="form-text text-danger"
+    >
+      Product Name Length must be less than 50
+    </div>
+    </ng-container>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Password"
+        formControlName="pass"
+      />
+    </div>
+    <ng-container *ngIf="getPassword.touched">
+      <div
+      *ngIf="getPassword.hasError('required')"
+      id="emailHelp"
+      class="form-text text-danger"
+    >
+     password is Required
+    </div>
+    <div
+      *ngIf="getUserName.hasError('max')"
+      id="emailHelp"
+      class="form-text text-danger"
+    >
+      password Length must be less than 20
+    </div>
+    </ng-container>
+    
+    <button class="btn btn-dark" (click)="go()">Login</button>
+  </form>
+    
+  </div>

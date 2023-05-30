@@ -1,0 +1,6 @@
+.navbar-nav-center {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

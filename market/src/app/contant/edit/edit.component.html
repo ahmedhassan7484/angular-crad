@@ -1,0 +1,76 @@
+<p class="text-warning bg-dark fw-bolder fs-3 text-decoration-underline text-center">Edit item</p>
+
+<div class="container p-5 mt-4">
+    <form [formGroup]="itemgroup">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">item name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Item Name"
+          formControlName="itemName"
+     
+        />
+       
+
+            <ng-container *ngIf="getitemName.touched">
+                <div
+                *ngIf="getitemName.hasError('required')"
+                id="emailHelp"
+                class="form-text text-danger"
+              >
+                item Name is Required
+              </div>
+             
+              </ng-container>
+       
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">price</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="price"
+          formControlName="price"
+        />
+        <ng-container *ngIf="getPrice.touched">
+            <div
+            *ngIf="getPrice.hasError('required')"
+            id="emailHelp"
+            class="form-text text-danger"
+          >
+            price is Required
+          </div>
+         
+          </ng-container>
+      </div>
+     
+     
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="discription"
+          formControlName="desc"
+        />
+      </div>
+      <ng-container *ngIf="getDesc.touched">
+        <div
+        *ngIf="getDesc.hasError('required')"
+        id="emailHelp"
+        class="form-text text-danger"
+      >
+        description is Required
+      </div>
+     
+      </ng-container>
+      
+      <button class="btn btn-dark" (click)="go($event)">Update</button>
+    </form>
+      
+    </div>
